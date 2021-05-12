@@ -1,3 +1,8 @@
+html, body {
+    height: 100%;
+    margin: 0%;
+}
+
 /* All text - font and color */
 body, input, button {
     font-size: 14px;
@@ -16,8 +21,19 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Buttons */
+button {
+    color: #3c4043;
+    border: none;
+    background-color: #f8f9fa;
+    padding: 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+}
+
 /* Setting Flexbox on entire page */
 .page-flex {
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -25,29 +41,44 @@ a:hover {
 /* Navbar settings */
 nav.navbar {
     display: flex;
+    align-items: center;
+}
+
+nav.upper {
     justify-content: space-between;
+}
+
+nav.lower {
+    justify-content: space-evenly;
+    background-color: #f2f2f2;
+}
+nav.lower a {
+    color: #70757a;
 }
 
 nav.navbar ul {
     list-style-type: none;
-    margin: 0;
+    margin: .6em;
     padding: 0;
 }
 
 nav.navbar ul li {
     display: inline-block;
-    padding: .8em;
+    padding: .7em;
 }
 
 .icon {
     vertical-align: middle;
 }
 
-/* Main content (Flexbox) */
+/* Main content: Logo, search, buttons */
 #main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    flex: 2;
 }
 
 /* Google logo */
@@ -56,19 +87,33 @@ nav.navbar ul li {
     justify-content: center;
     
     max-height: 93px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
-/* Search box */
+/* Search area */
 #search-box {
     display: flex;
     align-items: center;
 
-    height: 44px;
+    height: 38px;
     width: 80%;
+    max-width: 550px;
 
     border: #dfe1e5 1px solid;
     border-radius: 24px;
-    padding: .1em;
-    margin-top: 24px;
+    padding: .2em;
+    margin: 24px 0;
+}
+
+#search-text {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0 16px;
+}
+
+/* Area below search */
+#below-search {
+    flex: 1;
 }
